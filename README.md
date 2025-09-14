@@ -29,5 +29,5 @@ This is the first course in the quantitative methods sequence, which introduces 
     - [GitHub Desktop](https://desktop.github.com/download/) - Interact with GitHub using a GUI instead of command line or a web browser
       
 ## Module Materials
-⦁	[Course website](https://jeffreyziegler.org/pages/POU7001/454bb65f037965c84ff5ab4e9140df7e4787e69a/)
-⦁	[Course repository](github.com/ASDS-TCD/StatsI_2025)
+- [Course website](https://jeffreyziegler.org/pages/POU7001/454bb65f037965c84ff5ab4e9140df7e4787e69a/)
+- [Course repository](github.com/ASDS-TCD/StatsI_2025)
