@@ -6,7 +6,7 @@ About This Module
 
 This is the first course in the quantitative methods sequence, which introduces the linear regression model as a fundamental tool in applied statistical analysis. Students will apply concepts of statistical analysis, specifically multi-variable analysis and model building, to a broad set of real-world data and problems from the social sciences. We will cover the assumptions that underlie the linear regression model, including issues of estimation and inference, as well as methods used to diagnose and correct for violations of those assumptions. My expectation is that at the end of the semester you will be savvy readers of published research and tasteful users of linear models. Labs, problem sets, and exams will teach students to apply concepts from class toward programming skills in R, LaTeX and GitHub, which are standard practice in academics and industry. We will cover topics such as:
 
-⦁	examining and transforming data
+- examining and transforming data
 ⦁	linear regression
 ⦁	dummy variable regression
 ⦁	diagnostics of unusual and influential data
