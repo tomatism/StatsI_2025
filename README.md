@@ -13,8 +13,11 @@ This is the first course in the quantitative methods sequence, which introduces 
 - non-constant variance, non-normality, & collinearity
 - model selection
 
-## Instructors
-- [Jeffrey Ziegler](mailto:zieglerj@tcd.ie), Office Hours: T/Th 11:00-12:00 [Zoom](https://tcd-ie.zoom.us/j/6159065248)
+## People
+### Instructor
+- [Jeffrey Ziegler](mailto:zieglerj@tcd.ie), Office Hours: T/Th 11:00-12:00 [Zoom](https://calendly.com/jeffreymziegler/pou-7003-oh)
+
+### TAs
 - [Elena Karagiani](mailto:karagiae@tcd.ie)
 - [Redmond Scales](mailto:RSCALES@tcd.ie)
 
@@ -30,4 +33,4 @@ This is the first course in the quantitative methods sequence, which introduces 
       
 ## Module Materials
 - [Course website](https://jeffreyziegler.org/pages/POU7001/454bb65f037965c84ff5ab4e9140df7e4787e69a/)
-- [Course repository](github.com/ASDS-TCD/StatsI_2025)
+- [Course repository](https://github.com/ASDS-TCD/StatsI_2025/tree/main)
