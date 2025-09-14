@@ -33,4 +33,4 @@ This is the first course in the quantitative methods sequence, which introduces 
       
 ## Module Materials
 - [Course website](https://jeffreyziegler.org/pages/POU7001/454bb65f037965c84ff5ab4e9140df7e4787e69a/)
-- [Course repository](github.com/ASDS-TCD/StatsI_2025)
+- [Course repository](https://github.com/ASDS-TCD/StatsI_2025/tree/main)
