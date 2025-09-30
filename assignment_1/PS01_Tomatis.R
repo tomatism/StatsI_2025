@@ -26,7 +26,7 @@ pkgTest <- function(pkg){
   sapply(pkg,  require,  character.only = TRUE)
 }
 
-lapply(c("ggplot2", "tidyverse"),  pkgTest)
+lapply(c("ggplot2", "tidyverse", "patchwokr"),  pkgTest)
 
 #####################
 # Problem 1
@@ -68,7 +68,7 @@ CI_IQ <- c(lower_90,upper_90)
 
 test_stat <- (avg_IQ - 100) / SE
 #the test statistic is equal to -0.5957439
-p_value <- pt(-abs(test_stat), df = 24, lower.tail =  FALSE)
+p_value <- pt(test_stat, df = 24, lower.tail =  FALSE)
 
 #Evaluating the results
 alpha <- 0.05
@@ -101,10 +101,6 @@ Y_X1 <- ggplot(expenditure, aes(X1, Y)) +
            label = paste0("corr = ", round(corYX1, 4)),
            hjust = 1.1, vjust = 1.5, size = 2.5) +
   theme_bw()
-pdf("Y_X1.pdf")
-print(Y_X1)
-dev.off()
-
 
 Y_X2 <- ggplot(expenditure, aes(X2, Y)) +
   geom_point() +
@@ -113,10 +109,6 @@ Y_X2 <- ggplot(expenditure, aes(X2, Y)) +
            label = paste0("corr = ", round(corYX2, 4)),
            hjust = 1.1, vjust = 1.5, size = 2.5) +
   theme_bw()
-pdf("Y_X2.pdf")
-print(Y_X2)
-dev.off()
-
 
 Y_X3 <- ggplot(expenditure, aes(X3, Y)) +
   geom_point() +
@@ -125,9 +117,6 @@ Y_X3 <- ggplot(expenditure, aes(X3, Y)) +
            label = paste0("corr = ", round(corYX3, 4)),
            hjust = 1.1, vjust = 1.5, size = 2.5) +
   theme_bw()
-pdf("Y_X3.pdf")
-print(Y_X3)
-dev.off()
 
 X1_X2 <- ggplot(expenditure, aes(X1, X2)) +
   geom_point() +
@@ -136,9 +125,6 @@ X1_X2 <- ggplot(expenditure, aes(X1, X2)) +
            label = paste0("corr = ", round(corX1X2, 4)),
            hjust = 1.1, vjust = 1.5, size = 2.5) +
   theme_bw()
-pdf("X1_X2.pdf")
-print(X1_X2)
-dev.off()
 
 
 X2_X3 <- ggplot(expenditure, aes(X2, X3)) +
@@ -148,9 +134,13 @@ X2_X3 <- ggplot(expenditure, aes(X2, X3)) +
            label = paste0("corr = ", round(corX2X3, 4)),
            hjust = 1.1, vjust = 1.5, size = 2.5) +
   theme_bw()
-pdf("X2_X3.pdf")
-print(X2_X3)
+
+combined_plots <- (Y_X1| Y_X2| Y_X3) /
+  (X1_X2 | X2_X3)
+pdf("combined_plots.pdf")
+print(combined_plots)
 dev.off()
+
 
 ##2
 #Checking the nature of the variable 
