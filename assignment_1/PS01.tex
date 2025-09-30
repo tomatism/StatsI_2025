@@ -1,0 +1,173 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage{graphicx,textcomp}
+\usepackage{natbib}
+\usepackage{setspace}
+\usepackage{fullpage}
+\usepackage{color}
+\usepackage[reqno]{amsmath}
+\usepackage{amsthm}
+\usepackage{fancyvrb}
+\usepackage{amssymb,enumerate}
+\usepackage[all]{xy}
+\usepackage{endnotes}
+\usepackage{lscape}
+\newtheorem{com}{Comment}
+\usepackage{float}
+\usepackage{hyperref}
+\newtheorem{lem} {Lemma}
+\newtheorem{prop}{Proposition}
+\newtheorem{thm}{Theorem}
+\newtheorem{defn}{Definition}
+\newtheorem{cor}{Corollary}
+\newtheorem{obs}{Observation}
+\usepackage[compact]{titlesec}
+\usepackage{dcolumn}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usepackage{multirow}
+\usepackage{xcolor}
+\newcolumntype{.}{D{.}{.}{-1}}
+\newcolumntype{d}[1]{D{.}{.}{#1}}
+\definecolor{light-gray}{gray}{0.65}
+\usepackage{url}
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+\lstset{style=mystyle}
+\newcommand{\Sref}[1]{Section~\ref{#1}}
+\newtheorem{hyp}{Hypothesis}
+
+\title{Problem Set 1 \\
+\large Applied Stats/Quant Methods }
+\date{Due: October 9, 2025}
+\author{Matilda Tomatis}
+
+\begin{document}
+	\maketitle
+	
+	\section*{Instructions}
+	\begin{itemize}
+	\item Please show your work! You may lose points by simply writing in the answer. If the problem requires you to execute commands in \texttt{R}, please include the code you used to get your answers. Please also include the \texttt{.R} file that contains your code. If you are not sure if work needs to be shown for a particular problem, please ask.
+\item Your homework should be submitted electronically on GitHub.
+\item This problem set is due before 23:59 on Thursday October 9, 2025. No late assignments will be accepted.
+	\end{itemize}
+	
+	\vspace{1cm}
+	\section*{Question 1: Education}
+
+A school counselor was curious about the average of IQ of the students in her school and took a random sample of 25 students' IQ scores. The following is the data set:\\
+\vspace{.5cm}
+
+\lstinputlisting[language=R, firstline=35, lastline=35]{PS01_Tomatis.R}  
+
+\vspace{1cm}
+
+\begin{enumerate}
+	\item Find a 90\% confidence interval for the average student IQ in the school.\\
+	
+	\item Next, the school counselor was curious  whether  the average student IQ in her school is higher than the average IQ score (100) among all the schools in the country.\\ 
+	
+	\noindent Using the same sample, conduct the appropriate hypothesis test with $\alpha=0.05$.
+\end{enumerate}
+\vspace{1cm}
+\textbf{Answer 1}
+
+\noindent There are different steps needed in order to properly construct a 90\% confidence interval. Firstly we will need to find the sample parameter in question, hence we will calculate the sample mean out of the sample students' IQs.\\
+\vspace{.5cm}
+\lstinputlisting[language=R, firstline=40, lastline=41]{PS01_Tomatis.R}  
+\vspace{.5cm}
+\noindent Subsequently we calculate standard deviation and standard error from the sample. Moreover, we compute the t-value related to a 90\% C.I. This computation is done using the t-distribution as the sample is smaller than 30: with n = 25 the degrees of freedom are 24, the corresponding distribution is used to compute the confidence interval. \\
+\vspace{.5cm}
+\lstinputlisting[language=R, firstline=51, lastline=52]{PS01_Tomatis.R}  
+\vspace{.5cm}
+\noindent Once all this parameters are acquired, the confidence interval can be constructed by summing (upper bound) and subtracting (lower bound) the product of t-value and SE. \\
+\vspace{.5cm}
+\lstinputlisting[language=R, firstline=58, lastline=60]{PS01_Tomatis.R}  
+\vspace{.5cm}
+\begin{verbatim}
+	CI_IQ
+	[1]  93.95993 102.92007
+\end{verbatim}
+\vspace{1cm}
+\textbf{Answer 2}
+\noindent We shall start by clearly stating the hyphothesis under examination: \\
+\vspace{.5cm}
+\begin{enumerate}
+	\item Ho states: the average IQ of the class under examination is smaller or equal to 100\\
+	
+	\item Ha states: the average IQ of the class is higher than 100.\\ 
+\end{enumerate}
+\vspace{.5cm}
+\noindent In order to test our hyphothesis we must compute the test statistic, then compute the p-value associated with it. As mentioned above, for the calculation of p-value a t-distribution with 24 degrees of freedom will be used. \\
+\vspace{.5cm}
+\lstinputlisting[language=R, firstline=60, lastline=71]{PS01_Tomatis.R} 
+\vspace{.5cm}
+\noindent In order to evaluate the result we must consider wheter the p-value is bigger than the set $\alpha=0.05$ \\
+\vspace{.5cm}
+\lstinputlisting[language=R, firstline=75, lastline=77]{PS01_Tomatis.R} 
+\vspace{.5cm}
+\begin{verbatim}
+print(result)
+[1] "Ho cannot be rejected"
+\end{verbatim}
+\textit The result of our test suggest that Ho cannot be recected at the 5\% significance level. We don't have evidence supporting the claim that the class average IQ is higher than the average IQ score among all schools in the country. \\ 
+
+\newpage
+
+	\section*{Question 2: Political Economy}
+
+\noindent Researchers are curious about what affects the amount of money communities spend on addressing homelessness. The following variables constitute our data set about social welfare expenditures in the USA. \\
+\vspace{.5cm}
+
+
+\begin{tabular}{r|l}
+	\texttt{State} &\emph{50 states in US} \\
+	\texttt{Y} & \emph{per capita expenditure on shelters/housing assistance in state}\\
+	\texttt{X1} &\emph{per capita personal income in state} \\
+	\texttt{X2} &  \emph{Number of residents per 100,000 that are "financially insecure" in state}\\
+	\texttt{X3} &  \emph{Number of people per thousand residing in urban areas in state} \\
+	\texttt{Region} &  \emph{1=Northeast, 2= North Central, 3= South, 4=West} \\
+\end{tabular}
+
+\vspace{.5cm}
+\noindent Explore the \texttt{expenditure} data set and import data into \texttt{R}.
+\vspace{.5cm}
+\lstinputlisting[language=R, firstline=54, lastline=54]{PS01.R}  
+\vspace{.5cm}
+\begin{itemize}
+
+\item
+Please plot the relationships among \emph{Y}, \emph{X1}, \emph{X2}, and \emph{X3}? What are the correlations among them (you just need to describe the graph and the relationships among them)?
+\vspace{.5cm}
+\item
+Please plot the relationship between \emph{Y} and \emph{Region}? On average, which region has the highest per capita expenditure on housing assistance?
+\vspace{.5cm}
+\item
+Please plot the relationship between \emph{Y} and \emph{X1}? Describe this graph and the relationship. Reproduce the above graph including one more variable \emph{Region} and display different regions with different types of symbols and colors.
+\end{itemize}
+
+
+\end{document}
