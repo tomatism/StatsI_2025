@@ -39,11 +39,13 @@ n <- length(na.omit(y))
 # and storing them in a variable (common for point 1 and 2)
 avg_IQ <- mean(y) 
 #The value calculated is 98.44
-sample_sd <- sd(y)
-#13.09287
 
 #note: we don't have na
 
+sample_sd <- sd(y)
+# 13.09287
+SE <- sample_sd / sqrt(n)
+# 2.618575
 
 ##1
 #Step 1.2: Finding the .90 t-value 
@@ -54,7 +56,6 @@ t90 <- qt((1-0.90)/2, df = 24, lower.tail = FALSE)
 #Step 1.3: Finding the lower and upper tail
 #We will find the SE * t and + / - it from the average 
 
-SE <- sample_sd / sqrt(n)
 lower_90 <- avg_IQ - t90 * SE 
 upper_90 <- avg_IQ + t90 * SE
 CI_IQ <- c(lower_90,upper_90)
@@ -65,7 +66,6 @@ CI_IQ <- c(lower_90,upper_90)
 #Stating hypothesis: 
 #Ho: avg_IQ <= 100 // Ha: avg_IQ > 100
 #Finding appropriate test stat and the associated p-value
-
 test_stat <- (avg_IQ - 100) / SE
 #the test statistic is equal to -0.5957439
 p_value <- pt(test_stat, df = 24, lower.tail =  FALSE)
@@ -95,55 +95,58 @@ corX1X2 <- cor(expenditure$X1, expenditure$X2)
 corX1X3 <- cor(expenditure$X1, expenditure$X3)
 corX2X3 <- cor(expenditure$X2, expenditure$X3)
 
+# The coding was repeated for each variable, adjusting 
+# the position and value of the correlation accordingly. 
 Y_X1 <- ggplot(expenditure, aes(X1, Y)) +
   geom_point() +
   annotate("text",
-           x = 1300, y = 120,
+           x = 1400, y = 120,
            label = paste0("corr = ", round(corYX1, 4)),
-           hjust = 1.1, vjust = 1.5, size = 2.5) +
+           hjust = 1.1, vjust = 1.5, size = 3) +
   theme_bw()
 
 Y_X2 <- ggplot(expenditure, aes(X2, Y)) +
   geom_point() +
   annotate("text",
-           x = 180, y = 120,
+           x = 190, y = 120,
            label = paste0("corr = ", round(corYX2, 4)),
-           hjust = 1.1, vjust = 1.5, size = 2.5) +
+           hjust = 1.1, vjust = 1.5, size = 3) +
   theme_bw()
 
 Y_X3 <- ggplot(expenditure, aes(X3, Y)) +
   geom_point() +
   annotate("text",
-           x = 400, y = 120,
+           x = 450, y = 120,
            label = paste0("corr = ", round(corYX3, 4)),
-           hjust = 1.1, vjust = 1.5, size = 2.5) +
+           hjust = 1.1, vjust = 1.5, size = 3) +
   theme_bw()
 
 X1_X2 <- ggplot(expenditure, aes(X1, X2)) +
   geom_point() +
   annotate("text",
-           x = 1300, y = 500,
+           x = 1400, y = 500,
            label = paste0("corr = ", round(corX1X2, 4)),
-           hjust = 1.1, vjust = 1.5, size = 2.5) +
+           hjust = 1.1, vjust = 1.5, size = 3) +
   theme_bw()
 
-X1_X3 <- X1_X2 <- ggplot(expenditure, aes(X1, X2)) +
+X1_X3 <- ggplot(expenditure, aes(X1, X3)) +
   geom_point() +
   annotate("text",
-           x = 1300, y = 500,
+           x = 1400, y = 800,
            label = paste0("corr = ", round(corX1X3, 4)),
-           hjust = 1.1, vjust = 1.5, size = 2.5) +
+           hjust = 1.1, vjust = 1.5, size = 3) +
   theme_bw()
 
 
 X2_X3 <- ggplot(expenditure, aes(X2, X3)) +
   geom_point() +
   annotate("text",
-           x = 160, y = 880,
+           x = 190, y = 880,
            label = paste0("corr = ", round(corX2X3, 4)),
-           hjust = 1.1, vjust = 1.5, size = 2.5) +
+           hjust = 1.1, vjust = 1.5, size = 3) +
   theme_bw()
 
+# The plots were united in a single .pdf file
 combined_plots <- (Y_X1 | Y_X2 | Y_X3) /
   (X1_X2 | X1_X3 |X2_X3) 
 
@@ -170,6 +173,7 @@ table(expenditure$Region, expenditure$Fact_Region)
 tapply(expenditure$Y, expenditure$Fact_Region, mean)
 #Here are the results:  Northeast 79.44444  
 # North Central  83.91667 South 69.18750 West 88.30769 
+tapply(expenditure$Y, expenditure$Fact_Region, sd)
 
 
 #Plotting the relationship between the two, different colors based on the level
