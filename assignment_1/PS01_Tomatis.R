@@ -26,7 +26,7 @@ pkgTest <- function(pkg){
   sapply(pkg,  require,  character.only = TRUE)
 }
 
-lapply(c("ggplot2", "tidyverse", "patchwokr"),  pkgTest)
+lapply(c("ggplot2", "tidyverse", "patchwork"),  pkgTest)
 
 #####################
 # Problem 1
@@ -86,12 +86,13 @@ str(expenditure)
 
 ## 1
 #Plotting each variable with another with ggplot + their correlation
-#Saving them all as pdf for latex 
+#Saving them all together as pdf for latex 
 
 corYX1  <- cor(expenditure$Y, expenditure$X1)
 corYX2  <- cor(expenditure$Y, expenditure$X2)
 corYX3  <- cor(expenditure$Y, expenditure$X3)
 corX1X2 <- cor(expenditure$X1, expenditure$X2)
+corX1X3 <- cor(expenditure$X1, expenditure$X3)
 corX2X3 <- cor(expenditure$X2, expenditure$X3)
 
 Y_X1 <- ggplot(expenditure, aes(X1, Y)) +
@@ -126,6 +127,14 @@ X1_X2 <- ggplot(expenditure, aes(X1, X2)) +
            hjust = 1.1, vjust = 1.5, size = 2.5) +
   theme_bw()
 
+X1_X3 <- X1_X2 <- ggplot(expenditure, aes(X1, X2)) +
+  geom_point() +
+  annotate("text",
+           x = 1300, y = 500,
+           label = paste0("corr = ", round(corX1X3, 4)),
+           hjust = 1.1, vjust = 1.5, size = 2.5) +
+  theme_bw()
+
 
 X2_X3 <- ggplot(expenditure, aes(X2, X3)) +
   geom_point() +
@@ -135,12 +144,12 @@ X2_X3 <- ggplot(expenditure, aes(X2, X3)) +
            hjust = 1.1, vjust = 1.5, size = 2.5) +
   theme_bw()
 
-combined_plots <- (Y_X1| Y_X2| Y_X3) /
-  (X1_X2 | X2_X3)
-pdf("combined_plots.pdf")
+combined_plots <- (Y_X1 | Y_X2 | Y_X3) /
+  (X1_X2 | X1_X3 |X2_X3) 
+
+pdf("combined_plots.pdf", width = 15, height = 8)  
 print(combined_plots)
 dev.off()
-
 
 ##2
 #Checking the nature of the variable 
