@@ -5,7 +5,7 @@
 #####################
 
 # set working directory 
-setwd("C:\\Users\\matil\\Documents\\GitHub\\StatsI_2025\\assignment_1")
+setwd("C:\\Users\\matil\\Documents\\GitHub\\StatsI_2025\\assignment_1_submission")
 
 # remove objects
 rm(list=ls())
