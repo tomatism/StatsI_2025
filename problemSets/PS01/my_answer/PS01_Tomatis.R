@@ -5,7 +5,7 @@
 #####################
 
 # set working directory 
-setwd("C:\\Users\\matil\\Documents\\GitHub\\StatsI_2025\\assignment_1_submission")
+setwd("C:/Users/matil/Documents/GitHub/StatsI_2025/problemSets/PS01/my_answer")
 
 # remove objects
 rm(list=ls())
@@ -103,6 +103,7 @@ Y_X1 <- ggplot(expenditure, aes(X1, Y)) +
            x = 1400, y = 120,
            label = paste0("corr = ", round(corYX1, 4)),
            hjust = 1.1, vjust = 1.5, size = 3) +
+  labs(x = "Per capita income", y = "Per capita shelter exp.") +
   theme_bw()
 
 Y_X2 <- ggplot(expenditure, aes(X2, Y)) +
@@ -111,6 +112,7 @@ Y_X2 <- ggplot(expenditure, aes(X2, Y)) +
            x = 190, y = 120,
            label = paste0("corr = ", round(corYX2, 4)),
            hjust = 1.1, vjust = 1.5, size = 3) +
+  labs(x = "Financially insecure (per 100k)", y = "Per capita shelter exp.") +
   theme_bw()
 
 Y_X3 <- ggplot(expenditure, aes(X3, Y)) +
@@ -119,6 +121,7 @@ Y_X3 <- ggplot(expenditure, aes(X3, Y)) +
            x = 450, y = 120,
            label = paste0("corr = ", round(corYX3, 4)),
            hjust = 1.1, vjust = 1.5, size = 3) +
+  labs(x = "Urban residents (per 1k)", y = "Per capita shelter exp.") +
   theme_bw()
 
 X1_X2 <- ggplot(expenditure, aes(X1, X2)) +
@@ -127,6 +130,7 @@ X1_X2 <- ggplot(expenditure, aes(X1, X2)) +
            x = 1400, y = 500,
            label = paste0("corr = ", round(corX1X2, 4)),
            hjust = 1.1, vjust = 1.5, size = 3) +
+  labs(x = "Per capita income", y = "Financially insecure (per 100k)") +
   theme_bw()
 
 X1_X3 <- ggplot(expenditure, aes(X1, X3)) +
@@ -135,8 +139,8 @@ X1_X3 <- ggplot(expenditure, aes(X1, X3)) +
            x = 1400, y = 800,
            label = paste0("corr = ", round(corX1X3, 4)),
            hjust = 1.1, vjust = 1.5, size = 3) +
+  labs(x = "Per capita income", y = "Urban residents (per 1k)") +
   theme_bw()
-
 
 X2_X3 <- ggplot(expenditure, aes(X2, X3)) +
   geom_point() +
@@ -144,6 +148,7 @@ X2_X3 <- ggplot(expenditure, aes(X2, X3)) +
            x = 190, y = 880,
            label = paste0("corr = ", round(corX2X3, 4)),
            hjust = 1.1, vjust = 1.5, size = 3) +
+  labs(x = "Financially insecure (per 100k)", y = "Urban residents (per 1k)") +
   theme_bw()
 
 # The plots were united in a single .pdf file
@@ -181,17 +186,23 @@ tapply(expenditure$Y, expenditure$Fact_Region, sd)
 Y_Region <- ggplot(expenditure, aes(x = Fact_Region, y = Y, color = Fact_Region)) +
   geom_point() +
   stat_summary(fun = mean, geom = "point", shape = 18, size = 2, color = "black") +
+  labs(x = "Region", y = "Per capita shelter exp.") +
+  scale_color_discrete(name = "Region") +
   theme_bw()
+
 pdf("Y_Region.pdf")
 print(Y_Region)
 dev.off()
 
 ## 3
 #Plotting X and Y, with different colors and shapes based on the region of origin
-Y_X1_R <- ggplot(expenditure, aes(X1, Y, 
-                      colour = Fact_Region, shape = Fact_Region )) +
+Y_X1_R <- ggplot(expenditure, aes(X1, Y, colour = Fact_Region, shape = Fact_Region)) +
   geom_point() +
+  labs(x = "Per capita income", y = "Per capita shelter exp.") +
+  scale_color_discrete(name = "Region") +
+  scale_shape_discrete(name = "Region") +
   theme_bw()
+
 pdf("Y_X1_R.pdf")
 print(Y_X1_R)
 dev.off()

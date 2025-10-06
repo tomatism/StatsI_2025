@@ -103,11 +103,11 @@ A school counselor was curious about the average of IQ of the students in her sc
 \vspace{.5cm}
 \lstinputlisting[language=R, firstline=45, lastline=48]{PS01_Tomatis.R} 
 \vspace{.5cm}
-\noindent Moreover, we compute the t-value related to a 90\% C.I. This computation is done using the t-distribution as the sample is smaller than 30: with n = 25 the degrees of freedom are 24, the corresponding distribution is used to compute the confidence interval. \\
+\noindent Moreover, we compute the t-value related to a 90\% C.I. This computation is done using the t-distribution as the sample is smaller than 30. With n = 25 the degrees of freedom are 24, the corresponding distribution is used to compute the confidence interval. \\
 \vspace{.5cm}
 \lstinputlisting[language=R, firstline=53, lastline=54]{PS01_Tomatis.R}  
 \vspace{.5cm}
-\noindent Once all this parameters are acquired, the confidence interval can be constructed by summing (upper bound) and subtracting (lower bound) the product of t-value and SE. \\
+\noindent Once all this parameters are acquired, the confidence interval can be constructed by summing (upper bound) and subtracting (lower bound) the product of t-value and SE from the t90 value. \\
 \vspace{.5cm}
 \lstinputlisting[language=R, firstline=59, lastline=61]{PS01_Tomatis.R}  
 \begin{verbatim}
@@ -122,22 +122,23 @@ A school counselor was curious about the average of IQ of the students in her sc
 \noindent We shall start by clearly stating the hyphothesis under examination: \\
 \vspace{.5cm}
 \begin{enumerate}
-	\item Ho states: the average IQ of the class under examination is smaller or equal to 100\\
+	\item Ho states: the average IQ of the class under examination is smaller than or equal to 100\\
 	\item Ha states: the average IQ of the class is higher than 100.\\ 
 \end{enumerate}
 \vspace{.5cm}
-\noindent In order to test our hyphothesis we must compute the test statistic, then compute the p-value associated with it. As mentioned above, for the calculation of p-value a t-distribution with 24 degrees of freedom will be used. \\
+\noindent In order to test our hyphothesis we must compute the test statistic, then calculate the a p-value associated with it. As mentioned above, the appropriate distribution for the calculation of p-value is a t-distribution with 24 degrees of freedom. \\
 \vspace{.5cm}
 \lstinputlisting[language=R, firstline=68, lastline=71]{PS01_Tomatis.R} 
 \vspace{.5cm}
-\noindent In order to evaluate the result we must consider wheter the p-value is bigger than the set $\alpha=0.05$ \\
+\noindent So as to evaluate the result we must consider wheter the p-value is bigger than the set $\alpha=0.05$ \\
 \vspace{.5cm}
 \lstinputlisting[language=R, firstline=75, lastline=77]{PS01_Tomatis.R} 
 \begin{verbatim}
 print(result)
 [1] "Ho cannot be rejected"
 \end{verbatim}
-\textit The result of our test suggest that Ho cannot be recected at the 5\% significance level. We don't have evidence supporting the claim that the class average IQ is higher than the average IQ score among all schools in the country. \\ 
+\textit{The result of our test suggests that $H_0$ cannot be rejected at the 5\% significance level.} We do not have evidence supporting the claim that the class average IQ is higher than the average IQ score among all schools in the country.
+\\ 
 
 \newpage
 
@@ -176,7 +177,7 @@ Please plot the relationship between \emph{Y} and \emph{X1}? Describe this graph
 
 \noindent Below are the scatterplots obtained for each pair of Y and X variables in our dataset. Each plot includes the annotated correlation of the two variables in question. The measure was chosen as it allows for comparison across different samples and variables.\\
 \vspace{.5cm}
-\lstinputlisting[language=R, firstline=98, lastline=106]{PS01_Tomatis.R}  
+\lstinputlisting[language=R, firstline=98, lastline=107]{PS01_Tomatis.R}  
 \vspace{.5cm}
 \begin{figure}[h!]\centering
 	\caption{\footnotesize Scatterplot of all Y and X variable pairs}
@@ -187,44 +188,44 @@ Please plot the relationship between \emph{Y} and \emph{X1}? Describe this graph
 
 \vspace{0.5cm}
 \noindent Observing the graphs a weak-to-moderate linear tendency is observed in the relationship between the variables, though the graphs do present differences in the intensity of it. A common observation can be made: all linear relationships between the variables are positive. \\
-\noindent Notably the pair X1 and X2, as well as X2 and X3, have particularly low correlation coefficients (0.2056 and 0.2210), suggesting little shared linear change in those pairs. This is clearly observable in the scatterplots as well, a clear linear tendency is not observed in the points. \\
-\noindent The other pairwise relationships have overall higher correlations, peaking at 0.5953 for the X1-X3 relationship. This suggest a considerable shared linear change in per capital income and the number of resident in urban areas in a given state. Quite strong is also the correlation between Y and X1 (0.5317), suggesting more affluent states also have higher expenditure in shelters / housing assitance. \\
-\noindent The correlations between Y and X2 and between Y and X3, stand on similar grounds (0.4483 and 0.4637). It's worth mentioning that in the first of the two scatterplot, a higher concentration of points with lower values of X2 and higher values of Y is noticeable, suggesting a possible U-Shaped relationship of the variables. It is be noted, however, that such relation cannote be verified with the correlation value as it only measures linear association. \\
+\noindent Notably, the pairs X1 and X2, as well as X2 and X3, have particularly low correlation coefficients (0.2056 and 0.2210), suggesting little shared linear change in those pairs. Thus both per-capita income and the number of financially insecure residents, as well as the latter and the number of people residing in urban areas, seem to vary independently in linear terms. This is evident in the scatterplots as well: a clear linear tendency is not observed in the points. \\
+\noindent The other pairwise relationships have overall higher correlations, peaking at 0.5953 for the X1-X3 relationship. This suggest a considerable shared linear change in per capital income and the number of resident in urban areas in a given state. Quite strong is also the correlation between Y and X1 (0.5317), suggesting more affluent states also have higher expenditure in shelters/housing assitance. \\
+\noindent The correlations between Y and X2 and between Y and X3, stand on similar grounds (0.4483 and 0.4637). It's worth mentioning that in the first of the two scatterplot, a higher concentration of points with lower values of X2 and higher values of Y is noticeable, suggesting a possible U-Shaped relationship between per capita expenditure in shelters/housing assistance and the number of financially insecure residents. It is be noted, however, that such relation cannote be verified with the correlation value as it only measures linear association. \\
 \vspace{1cm}
 
 \noindent\textbf{Answer 2} \\
 
 \noindent In order to plot the levels of expenditure in each region, we first recoded the original numeric variable into a factor. We assigned a name to each of the four numberic codes, thus creating a factore whose levels are the region names. Rather than continous, the newly modified variable is categorical. \\
 
-\lstinputlisting[language=R, firstline=163, lastline=167]{PS01_Tomatis.R}  
+\lstinputlisting[language=R, firstline=168, lastline=172]{PS01_Tomatis.R}  
 \vspace{.5cm}
 \noindent We proceeded calculating the average expenditure for each of the regions. Afterwards, plotting the relationship between the Y and Region variable.  \\
-\lstinputlisting[language=R, firstline=173, lastline=173]{PS01_Tomatis.R}  
+\lstinputlisting[language=R, firstline=178, lastline=178]{PS01_Tomatis.R}  
 \begin{verbatim}
 Northeast North Central         South 
 79.44444      83.91667      69.18750 
 West 
 88.30769 
 \end{verbatim}
-\lstinputlisting[language=R, firstline=181, lastline=184]{PS01_Tomatis.R}  
+\lstinputlisting[language=R, firstline=186, lastline=191]{PS01_Tomatis.R}  
 \vspace{.5cm}
 \begin{figure}[H]\centering
 	\caption{\footnotesize Expenditure by region}
 	\label{fig:Y_Region}
 	\includegraphics[width=.75\textwidth]{Y_Region.pdf}
 \end{figure}
-\noindent The region with the highest average expenditure is "West". It is worth mentioning that the sample observation from this area are however very spreadout across different levels of Y, with a standard deviation of 24.06.\\
+\noindent The region with the highest average expenditure is "West". It is worth mentioning that the sample observation from this area are however very spreadout across different values of Y, with a standard deviation of 24.06.\\
 
 \vspace{1cm}
 
 \noindent\textbf{Answer 3}\\
 
 \vspace{0.5cm}
-\noindent The graph was reported and commented above, in the answer 1 of question 2. We will thus proceed with the creation of the nre version as requested.\\
-\lstinputlisting[language=R, firstline=191, lastline=194]{PS01_Tomatis.R}  
+\noindent The graph was reported and commented above, in the answer 1 of question 2. We will thus proceed with the creation of the upgraded version as requested.\\
+\lstinputlisting[language=R, firstline=199, lastline=204]{PS01_Tomatis.R}  
 \vspace{.5cm}
 
-\begin{figure}[h!]\centering
+\begin{figure}[H]\centering
 	\caption{\footnotesize Scatterplot Y and X, by Region}
 	\label{fig:Y_X1_Region}
 	\includegraphics[width=.75\textwidth]{Y_X1_R.pdf}
@@ -232,7 +233,7 @@ West
 
 \vspace{.5cm}
 \noindent To better comment on how the relationship between X and Y varies across region we calculated the correlation for each of the 4 areas. 
-\lstinputlisting[language=R, firstline=201, lastline=203]{PS01_Tomatis.R}
+\lstinputlisting[language=R, firstline=212, lastline=214]{PS01_Tomatis.R}
 \begin{verbatim}
   Fact_Region   correlation
 <fct>               <dbl>

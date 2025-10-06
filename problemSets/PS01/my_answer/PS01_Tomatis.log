@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.26)  2 OCT 2025 15:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.26)  6 OCT 2025 23:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -971,88 +971,88 @@ Underfull \hbox (badness 10000) in paragraph at lines 118--119
 
  []
 
-
+[2]
 Underfull \hbox (badness 10000) in paragraph at lines 125--126
 
  []
 
-[2]
+
 Underfull \hbox (badness 10000) in paragraph at lines 126--127
 
  []
 
 (PS01_Tomatis.R) (PS01_Tomatis.R)
-Underfull \hbox (badness 10000) in paragraph at lines 140--141
+Underfull \hbox (badness 10000) in paragraph at lines 140--142
 
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 175--176
+Underfull \hbox (badness 10000) in paragraph at lines 176--177
 
  []
 
-(PS01_Tomatis.R) [4]
-<combined_plots.pdf, id=72, 1084.05pt x 578.16pt>
+(PS01_Tomatis.R [4])
+<combined_plots.pdf, id=73, 1084.05pt x 578.16pt>
 File: combined_plots.pdf Graphic file (type pdf)
 <use combined_plots.pdf>
-Package pdftex.def Info: combined_plots.pdf  used on input line 184.
+Package pdftex.def Info: combined_plots.pdf  used on input line 185.
 (pdftex.def)             Requested size: 516.73338pt x 275.59927pt.
 
-Overfull \hbox (46.97836pt too wide) in paragraph at lines 184--185
+Overfull \hbox (46.97836pt too wide) in paragraph at lines 185--186
  [][] 
  []
 
 [5 <./combined_plots.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 195--196
+Underfull \hbox (badness 10000) in paragraph at lines 196--197
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 197--198
+Underfull \hbox (badness 10000) in paragraph at lines 198--199
 
  []
 
 (PS01_Tomatis.R)
-Underfull \hbox (badness 10000) in paragraph at lines 201--202
+Underfull \hbox (badness 10000) in paragraph at lines 202--203
 
  []
 
 (PS01_Tomatis.R) (PS01_Tomatis.R)
-<Y_Region.pdf, id=85, 505.89pt x 505.89pt>
+<Y_Region.pdf, id=87, 505.89pt x 505.89pt>
 File: Y_Region.pdf Graphic file (type pdf)
 <use Y_Region.pdf>
-Package pdftex.def Info: Y_Region.pdf  used on input line 214.
+Package pdftex.def Info: Y_Region.pdf  used on input line 215.
 (pdftex.def)             Requested size: 352.31625pt x 352.32199pt.
  [6]
-Underfull \hbox (badness 10000) in paragraph at lines 216--217
+Underfull \hbox (badness 10000) in paragraph at lines 217--218
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 220--221
+Underfull \hbox (badness 10000) in paragraph at lines 221--222
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 223--224
+Underfull \hbox (badness 10000) in paragraph at lines 224--225
 
  []
 
-(PS01_Tomatis.R)
-<Y_X1_R.pdf, id=103, 505.89pt x 505.89pt>
+(PS01_Tomatis.R [7 <./Y_Region.pdf>])
+<Y_X1_R.pdf, id=122, 505.89pt x 505.89pt>
 File: Y_X1_R.pdf Graphic file (type pdf)
 <use Y_X1_R.pdf>
-Package pdftex.def Info: Y_X1_R.pdf  used on input line 230.
+Package pdftex.def Info: Y_X1_R.pdf  used on input line 231.
 (pdftex.def)             Requested size: 352.31625pt x 352.32199pt.
- [7 <./Y_Region.pdf>] (PS01_Tomatis.R
+ (PS01_Tomatis.R
 LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 2
-01.
+12.
 
 (C:\Users\matil\AppData\Local\Programs\MiKTeX\tex/latex/base\omscmr.fd
 File: omscmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 201.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 212.
 )
 [8 <./Y_X1_R.pdf>] [9] (PS01_Tomatis.aux)
  ***********
@@ -1063,10 +1063,10 @@ Package rerunfilecheck Info: File `PS01_Tomatis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 27359 strings out of 474486
- 481605 string characters out of 5743755
- 2053542 words of memory out of 5000000
- 49063 multiletter control sequences out of 15000+600000
+ 27367 strings out of 474486
+ 481768 string characters out of 5743755
+ 2077542 words of memory out of 5000000
+ 49066 multiletter control sequences out of 15000+600000
  569162 words of font info for 82 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,6n,93p,3246b,2131s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1080,13 +1080,14 @@ onts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/matil/AppData/Local/Programs
 Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/matil/AppDat
 a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/mati
 l/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Use
-rs/matil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pf
-b><C:/Users/matil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
-cmti12.pfb><C:/Users/matil/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
-fonts/cm/cmtt12.pfb>
-Output written on PS01_Tomatis.pdf (9 pages, 203245 bytes).
+rs/matil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb>
+<C:/Users/matil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
+sy10.pfb><C:/Users/matil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfo
+nts/cm/cmti12.pfb><C:/Users/matil/AppData/Local/Programs/MiKTeX/fonts/type1/pub
+lic/amsfonts/cm/cmtt12.pfb>
+Output written on PS01_Tomatis.pdf (9 pages, 214736 bytes).
 PDF statistics:
- 209 PDF objects out of 1000 (max. 8388607)
- 75 named destinations out of 1000 (max. 500000)
+ 220 PDF objects out of 1000 (max. 8388607)
+ 80 named destinations out of 1000 (max. 500000)
  28 words of extra memory for PDF output out of 10000 (max. 10000000)
 
