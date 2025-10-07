@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.26)  7 OCT 2025 17:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.26)  7 OCT 2025 17:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1039,7 +1039,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 224--225
  []
 
 (PS01_Tomatis.R [7 <./Y_Region.pdf>])
-<Y_X1_R.pdf, id=122, 505.89pt x 505.89pt>
+<Y_X1_R.pdf, id=121, 505.89pt x 505.89pt>
 File: Y_X1_R.pdf Graphic file (type pdf)
 <use Y_X1_R.pdf>
 Package pdftex.def Info: Y_X1_R.pdf  used on input line 231.
@@ -1085,7 +1085,7 @@ rs/matil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb>
 sy10.pfb><C:/Users/matil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfo
 nts/cm/cmti12.pfb><C:/Users/matil/AppData/Local/Programs/MiKTeX/fonts/type1/pub
 lic/amsfonts/cm/cmtt12.pfb>
-Output written on PS01_Tomatis.pdf (9 pages, 214735 bytes).
+Output written on PS01_Tomatis.pdf (9 pages, 214715 bytes).
 PDF statistics:
  220 PDF objects out of 1000 (max. 8388607)
  80 named destinations out of 1000 (max. 500000)
