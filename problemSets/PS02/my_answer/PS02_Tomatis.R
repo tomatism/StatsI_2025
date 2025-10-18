@@ -103,8 +103,8 @@ print(result)
 #were diverging the most and which one the least, it is an observable pattern of association between the cells.
 
 polsci_df_long <- polsci_df_long |>
-  mutate(z_values = (Fo - Fe) /
-           sqrt((Fe)*(1 - Rows_tot / GT) * (1 - Cols_tot / GT)))
+  mutate(z_values = ((Fo - Fe) /
+           sqrt((Fe)*(1 - Rows_tot / GT) * (1 - Cols_tot / GT))))
 
 #Let's now pivot.wider again to have the data frame as desired 
 
