@@ -133,12 +133,16 @@
 \vspace{2cm}
 \noindent\textbf{Answer a}\\
 \vspace{0.5cm}
-\noindent In order to compute the chi-squared statics we must compute the total sum for each row and for each column, as well as the grand total for the whole table. A quick way to do so is by "pivoting longer" the dataset, so it would still be tidy (i.e. there would still be a variable for each column, a requirement not respected let the datset be left wide and adding the row totals and the column totals to it) and from there computing the sum of observations grouping by "Class" and by "Obserevd outcome". 
+\noindent In order to manually compute the $\chi^2$ test statistic we must go through various computational steps.
+\noindent Firstly, we must compute the total sum of each row and of each column, as well as the grand total of observations for the whole table. This values will be necessary for the calculation of expected frequencies. 
+
+\noindent A quick way to do so is by "pivoting longer" the dataset. With this operation the dataset will be tidy (i.e. there would be a variable for each column, a requirement not respected let the datset be left wide) and from there computing the sum of observations grouping by "Class" and by "Observed outcome". 
+
 \noindent After obtaining these necessary values, we can proceed to calculate the expected frequencies for each observation via the formula $\frac{\text{Row Total} \times \text{Column Total}}{\text{Grand Total}}$ . 
 \vspace{0.5cm}
 \lstinputlisting[language=R, firstline=79, lastline=80]{PS02_Tomatis.R}  
 \vspace{0.5cm}
-\noindent At this point every element necessary is obtained and the chi-squared value can be manually camputed. This is the reference formula for the computation: $\chi^2 = \sum \frac{(F_o - F_e)^2}{F_e}$
+\noindent At this point every necessary element has been obtained and the $\chi^2$ test statistic can be manually determined. This is the reference formula for the computation: $\chi^2 = \sum \frac{(F_o - F_e)^2}{F_e}$
 \vspace{0.5cm}
 \lstinputlisting[language=R, firstline=84, lastline=84]{PS02_Tomatis.R} 
 \begin{verbatim}
@@ -148,7 +152,9 @@
 \vspace{0.5cm}
 \noindent\textbf{Answer b}\\
 \vspace{0.5cm}
-\noindent Once the test statistic is obtained we can calcualte the related p-value; to do so we must consider a chi-squared distribution with $(\text{number of rows} - 1) \times (\text{number of columns} - 1)$ degrees of freedom.
+\noindent Once the test statistic is obtained we can calcualte the related p-value.
+
+\noindent To do so we must consider a chi-squared distribution with " $(\text{number of rows} - 1) \times (\text{number of columns} - 1)$ " degrees of freedom.
 \vspace{0.5cm}
 \lstinputlisting[language=R, firstline=91, lastline=92]{PS02_Tomatis.R}
 \begin{verbatim}
@@ -156,7 +162,9 @@
 	The variables don't showcase statistically significant association"
 \end{verbatim}
 \vspace{0.5cm}
-\noindent Considering the p-value associated is bigger than the significance level alpha, we cannot reject our null hypothesis of statistical indipendence between the variables "Social Class of the driver" and "Observed bribery request". 
+\noindent Considering the p-value obtained is bigger than the significance level $\alpha$, we cannot reject our null hypothesis of statistical indipendence between the variables "Social Class of the driver" and "Observed bribery request". 
+
+\noindent Paraphrasing our find, the variables under scrutiny appear to be statistcally indipendent.  
 
 \vspace{0.5cm}
 \noindent\textbf{Answer c}\\
@@ -182,7 +190,9 @@
 \vspace{0.5cm}
 \noindent\textbf{Answer d}\\
 \vspace{0.5cm}
-\noindent Standardized residulas are useful for the interpretation of a chi-squared coeffient, as they indicate theh direction in which the observed values diverge from the expected ones (computed under the assumption  of indipendence). The chi-squared coefficient alone does not show the magnitude of the distance of each observation, it might be inflated by a few larger deviations rather than by the whole sample. In our case, we can observe how none of the z-values exceed +/- 2, a general rule of thumb threshold beyond which it's plausible to question the indipendence of the variables under examination. 
+\noindent Standardized residulas are useful for the interpretation of a chi-squared coeffien as they indicate the direction and magnitude of divergence of the observed values from the expected ones. The chi-squared coefficient alone does not allow for any commentary on such informations. In principle, it might be inflated by a few larger deviations rather than by the whole sample and it would be complicated to determine simply by its value. 
+
+\noindent In our case, we can observe how none of the z-values exceed +/- 2, a general rule of thumb threshold beyond which it's plausible to question the indipendence of the variables under examination. 
 
 
 \newpage
@@ -228,7 +238,7 @@ Chattopadhyay and Duflo were interested in whether women promote different polic
 \noindent\textbf{Answer a}\\
 \vspace{0.5cm}
 \begin{enumerate}
-	\item $H_0$ states: $\beta_1 = 0$, interpretable as having reserved positions for female leaders has no impact on the creation and repair of irrigation facilities. \\
+	\item $H_0$ states: $\beta_1 = 0$, interpretable as: having reserved positions for female leaders has no impact on the creation and repair of irrigation facilities. \\
 	\item $H_a$ states: $\beta_1 \neq 0$, hence part of the leading positions being reserved for women does have an impact on the creation and repair of irrigation facilities. \\
 \end{enumerate}
 
@@ -237,6 +247,8 @@ Chattopadhyay and Duflo were interested in whether women promote different polic
 \vspace{0.5cm}
 \noindent We will proceed to test our hyphothesis by running the following bivariate regression: 
 \noindent $\text{Irrigation} = \beta_0 + \beta_1 \text{Reserved} + \varepsilon$
+\vspace{0.5cm}
+
 \lstinputlisting[language=R, firstline=136, lastline=136]{PS02_Tomatis.R}
 \begin{table}[!htbp] \centering 
 	\caption{Bivariate regression model with GP as Y and irrigation as X1} 
@@ -268,8 +280,9 @@ Chattopadhyay and Duflo were interested in whether women promote different polic
 \vspace{0.5cm}
 \noindent\textbf{Answer c}\\
 \vspace{0.5cm}
-\noindent The $\beta_1$ estimate has a value of -0.369, indicating that when a Gram Panchayat (GP) has positions reserved for female leaders the number of new or repaired irrigation facilities in its villages decreases by approximately one-third, on average, compared to non-reserved GPs. The standard error estimate is 1.122.  
+\noindent The $\beta_1$ estimate has a value of -0.369, indicating that when a Gram Panchayat (GP) has positions reserved for female leaders the number of new or repaired irrigation facilities in its villages decreases by approximately one-third, on average, compared to non-reserved GPs.   
 
-\noindent Across all conventional significance thresholds (0.10, 0.05 and 0.01), the coefficient computed shows no statistically significant impact on the creation and restoration of irrigation facilities. However, the model might suffer from oversimplification: it is difficult to hypothesize that only the reservation policy might have an impact on irrigation facility funding, and our estimate might suffer from omitted variable bias.
-%\end{enumerate}
+\noindent At all conventional significance levels (0.10, 0.05, and 0.01), the estimated coefficient indicates that reserving leadership positions for women in Gram Panchayats has no statistically significant effect on the creation or restoration of irrigation facilities. These results are in line with $H_0$.  
+
+\noindent However, the model might suffer from oversimplification. It is difficult to hypothesize that only the reservation policy has an impact on irrigation facility funding: our estimate might suffer from omitted variable bias.
 \end{document}

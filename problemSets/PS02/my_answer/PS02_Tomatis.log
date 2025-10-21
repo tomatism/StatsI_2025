@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.26)  18 OCT 2025 13:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.26)  21 OCT 2025 20:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1007,6 +1007,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 109--110
 
  []
 
+[2]
 (C:\Users\matil\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
 )
@@ -1016,10 +1017,10 @@ File: lstlang2.sty 2023/02/27 1.9 listings language file
 (C:\Users\matil\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang3.sty
 File: lstlang3.sty 2023/02/27 1.9 listings language file
 )
-[2]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 139.
- (PS02_Tomatis.R
+nput line 143.
+
+(PS02_Tomatis.R
 LaTeX Font Info:    Trying to load font information for OML+cmr on input line 7
 9.
 
@@ -1037,22 +1038,29 @@ File: omscmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 79.
 )
-(PS02_Tomatis.R) (PS02_Tomatis.R) (PS02_Tomatis.R) [3] [4]
-Underfull \hbox (badness 10000) in paragraph at lines 191--192
+(PS02_Tomatis.R)
+Overfull \hbox (53.50241pt too wide) in paragraph at lines 157--159
+\OT1/cmr/m/n/12 To do so we must con-sider a chi-squared dis-tri-bu-tion with "
+ $([] \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 1) \OMS/cmsy/m/n/12 ^^B \OT1/cmr/m/n
+/12 ([] \OMS/cmsy/m/n/12 ^^@
+ []
+
+(PS02_Tomatis.R) (PS02_Tomatis.R [3]) [4]
+Underfull \hbox (badness 10000) in paragraph at lines 201--202
 
  []
 
 
-LaTeX Warning: Reference `fig:women_desc' on page 5 undefined on input line 193
+LaTeX Warning: Reference `fig:women_desc' on page 5 undefined on input line 203
 .
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 231--232
+Underfull \hbox (badness 10000) in paragraph at lines 241--242
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--233
+Underfull \hbox (badness 10000) in paragraph at lines 242--243
 
  []
 
@@ -1074,7 +1082,7 @@ Package rerunfilecheck Info: File `PS02_Tomatis.out' has not changed.
 Here is how much of TeX's memory you used:
  28460 strings out of 474486
  502091 string characters out of 5743755
- 2024542 words of memory out of 5000000
+ 1993542 words of memory out of 5000000
  50191 multiletter control sequences out of 15000+600000
  570153 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1102,7 +1110,7 @@ ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/User
 s/matil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb
 ><C:/Users/matil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
 mtt12.pfb>
-Output written on PS02_Tomatis.pdf (7 pages, 233313 bytes).
+Output written on PS02_Tomatis.pdf (7 pages, 234046 bytes).
 PDF statistics:
  173 PDF objects out of 1000 (max. 8388607)
  30 named destinations out of 1000 (max. 500000)
