@@ -99,7 +99,7 @@
 \noindent\textbf{Answer 1.1}\\
 
 \vspace{0.5cm}
-	\noindent A bivariate linear regression is estimated with vote share (\texttt{voteshare}) as the dependent variable and the difference in log spending (\texttt{difflog}) as the explanatory variable. The estimated coefficient $\hat{\beta}_1 = 0.042$ implies that, for each one-unit increase in the spending difference between the incumbent and the challenger (in log units), the incumbent’s vote share increases by approximately 0.042.
+	\noindent A bivariate linear regression is estimated with vote share (\texttt{voteshare}) as the dependent variable and the difference in log spending (\texttt{difflog}) as the explanatory variable. The estimated coefficient $\hat{\beta}_1 = 0.042$ implies that, for each one-unit increase in the spending difference between the incumbent and the challenger (in log units), the incumbent’s vote share increases on average by approximately 0.042.
 \lstinputlisting[language=R, firstline=40, lastline=40]{PS03_Tomatis.R} 
 \begin{table}[!htbp] \centering 
 	\caption{First bivariate regression model} 
@@ -109,9 +109,9 @@
 		\hline \\[-1.8ex] 
 		& \multicolumn{1}{c}{\textit{Dependent variable:}} \\ 
 		\cline{2-2} 
-		\\[-1.8ex] & voteshare \\ 
+		\\[-1.8ex] & Incumbent's party overall vote share \\ 
 		\hline \\[-1.8ex] 
-		difflog & 0.042$^{***}$ \\ 
+		Difference in campaign respending & 0.042$^{***}$ \\ 
 		& (0.001) \\ 
 		& \\ 
 		Constant & 0.579$^{***}$ \\ 
@@ -135,7 +135,7 @@
 \vspace{0.5cm}
 \noindent Follows the code to obtain a scatterplot having \texttt{voteshare} on the y-axis and \texttt{difflog} on the x-axis, added is their fitted regression line with its shaded confidence interval.
 
-\lstinputlisting[language=R, firstline=48, lastline=52]{PS03_Tomatis.R} 
+\lstinputlisting[language=R, firstline=50, lastline=54]{PS03_Tomatis.R} 
 \begin{figure}[H]\centering
 	\caption{\footnotesize Scatterplot of incumbent vote share against spending difference with fitted regression line}
 	\label{fig:q1_scatter}
@@ -147,7 +147,7 @@
 \vspace{0.5cm}
 \noindent The residuals obtained from regressing \texttt{voteshare} on \texttt{difflog} are stored in a separate object.
 
-\lstinputlisting[language=R, firstline=61, lastline=61]{PS03_Tomatis.R} 
+\lstinputlisting[language=R, firstline=63, lastline=63]{PS03_Tomatis.R} 
 
 \vspace{1cm}
 \noindent\textbf{Answer 1.4}\\
@@ -175,8 +175,8 @@
 \noindent\textbf{Answer 2.1}\\
 
 \vspace{0.5cm}
-\noindent A bivariate linear regression is estimated with incumbent's party presidential vote share (\texttt{presvote}) as the dependent variable and the difference in log spending (\texttt{difflog}) as the explanatory variable. The estimated coefficient $\hat{\beta}_1 = 0.023837$ implies that, for each one-unit increase in the spending difference between the incumbent and the challenger (in log units), the presidential candidate of the incumbent’s part is expected to have an increases of approximately 2.4 percentage points.
-\lstinputlisting[language=R, firstline=68, lastline=68]{PS03_Tomatis.R} 
+\noindent A bivariate linear regression is estimated with incumbent's party presidential vote share (\texttt{presvote}) as the dependent variable and the difference in log spending (\texttt{difflog}) as the explanatory variable. The estimated coefficient $\hat{\beta}_1 = 0.023837$ implies that, on average, for each one-unit increase in the spending difference between the incumbent and the challenger (in log units), the presidential candidate of the incumbent’s part is expected to have an increases of approximately 2.4 percentage points.
+\lstinputlisting[language=R, firstline=70, lastline=70]{PS03_Tomatis.R} 
 \begin{table}[!htbp] \centering 
 	\caption{Second bivariate regression model} 
 	\label{} 
@@ -185,9 +185,9 @@
 		\hline \\[-1.8ex] 
 		& \multicolumn{1}{c}{\textit{Dependent variable:}} \\ 
 		\cline{2-2} 
-		\\[-1.8ex] & presvote \\ 
+		\\[-1.8ex] & Presidential candidate's vote share \\ 
 		\hline \\[-1.8ex] 
-		difflog & 0.024$^{***}$ \\ 
+		Difference in campaign respending & 0.024$^{***}$ \\ 
 		& (0.001) \\ 
 		& \\ 
 		Constant & 0.508$^{***}$ \\ 
@@ -211,7 +211,7 @@
 \vspace{0.5cm}
 \noindent Repeating the same procedure from before we obtain a new scatterplot, this second time \texttt{presvote} lays on the y-axis and the regression line is obtained by regressing it on \texttt{difflog}.
 
-\lstinputlisting[language=R, firstline=76, lastline=80]{PS03_Tomatis.R} 
+\lstinputlisting[language=R, firstline=80, lastline=84]{PS03_Tomatis.R} 
 \begin{figure}[H]\centering
 	\caption{\footnotesize Scatterplot of incumbent's party presidential candidate's vote share against spending difference, with fitted regression line}
 	\label{fig:q2_scatter}
@@ -223,7 +223,7 @@
 \vspace{0.5cm}
 \noindent The residuals obtained from the second simple linear regression are stored in a separate object.
 
-\lstinputlisting[language=R, firstline=89, lastline=89]{PS03_Tomatis.R} 
+\lstinputlisting[language=R, firstline=99, lastline=99]{PS03_Tomatis.R} 
 
 \vspace{1cm}
 \noindent\textbf{Answer 2.4}\\
@@ -253,7 +253,7 @@
 
 \vspace{0.5cm}
 \noindent For the last estimation of the $\beta_1$ and $\beta_0$ coefficients using data from the \textbf{incumbent\_subset} dataset, a bivariate regression with \texttt{voteshare} as the dependent variable and \texttt{presvote} as the explanatory one. The estimated coefficient $\hat{\beta}_1 = 0.388$ suggests that, on average, when the incumbent party’s presidential candidate performs better by one unit in vote share, the incumbent’s own vote share increases by approximately 0.388 units
-\lstinputlisting[language=R, firstline=95, lastline=95]{PS03_Tomatis.R} 
+\lstinputlisting[language=R, firstline=99, lastline=99]{PS03_Tomatis.R} 
 \begin{table}[!htbp] \centering 
 	\caption{Third bivariate regression model} 
 	\label{} 
@@ -262,9 +262,9 @@
 		\hline \\[-1.8ex] 
 		& \multicolumn{1}{c}{\textit{Dependent variable:}} \\ 
 		\cline{2-2} 
-		\\[-1.8ex] & voteshare \\ 
+		\\[-1.8ex] & Incumbent's party overall vote share \\ 
 		\hline \\[-1.8ex] 
-		presvote & 0.388$^{***}$ \\ 
+		Presidential candidate's vote share & 0.388$^{***}$ \\ 
 		& (0.013) \\ 
 		& \\ 
 		Constant & 0.441$^{***}$ \\ 
@@ -288,7 +288,7 @@
 \vspace{0.5cm}
 \noindent Once again, suing the same methods, a scatterplot of our two variables of interest is made and their simple linear regression line is added.
 
-\lstinputlisting[language=R, firstline=103, lastline=106]{PS03_Tomatis.R} 
+\lstinputlisting[language=R, firstline=109, lastline=113]{PS03_Tomatis.R} 
 \begin{figure}[H]\centering
 	\caption{\footnotesize Scatterplot of incumbent's party overall vote share against incumbent's party presidential candidate's vote share, with fitted regression line}
 	\label{fig:q3_scatter}
@@ -308,8 +308,10 @@
 \section*{Question 4}
 \noindent The residuals from part (a) tell us how much of the variation in \texttt{voteshare} is $not$ explained by the difference in spending between incumbent and challenger. The residuals in part (b) tell us how much of the variation in \texttt{presvote} is $not$ explained by the difference in spending between incumbent and challenger in the district.
 	\begin{enumerate}
-		\item Run a regression where the outcome variable is the residuals from Question 1 and the explanatory variable is the residuals from Question 2.	\vspace{6cm}
-		\item Make a scatterplot of the two residuals and add the regression line. 	\vspace{6cm}
+		\item Run a regression where the outcome variable is the residuals from Question 1 and the explanatory variable is the residuals from Question 2.	
+		\vspace{0.5cm}
+		\item Make a scatterplot of the two residuals and add the regression line. 	
+		\vspace{0.5cm}
 		\item Write the prediction equation.
 	\end{enumerate}
 	
@@ -317,9 +319,9 @@
 \noindent\textbf{Answer 4.1}\\
 
 \vspace{0.5cm}
-\noindent Using the vectors created when storing the linear regression residuals from Q1 and Q2, a bivariate linear regression is performed. The estimated $\hat{\beta}_1$ coefficient provides an indication of the magnitude and direction of the linear relationship between the incumbent party’s overall vote share and the incumbent party’s presidential candidate’s vote share, after controlling for the difference in campaign spending between the incumbent and the challenger. The significance of the estimate suggests that it would be appropriate to control for both \texttt{difflog} and \texttt{presvote} when estimating the \texttt{voteshare} equation. 
-\lstinputlisting[language=R, firstline=118, lastline=118]{PS03_Tomatis.R}  
-\begin{table}[!htbp] \centering 
+\noindent Using the vectors created when storing the linear regression residuals from Q1 and Q2, a bivariate linear regression is performed. The estimated $\hat{\beta}_1$ coefficient provides an indication of the magnitude and direction of the average linear relationship between the incumbent party’s overall vote share and the incumbent party’s presidential candidate’s vote share, after controlling for the difference in campaign spending between the incumbent and the challenger. The significance of the estimate suggests that it would be appropriate to control for both \texttt{difflog} and \texttt{presvote} when estimating the \texttt{voteshare} equation. 
+\lstinputlisting[language=R, firstline=124, lastline=124]{PS03_Tomatis.R}  
+\begin{table}[H] \centering 
 	\caption{Regressing Q1 residuals on Q2 residuals} 
 	\label{} 
 	\begin{tabular}{@{\extracolsep{5pt}}lc} 
@@ -327,9 +329,9 @@
 		\hline \\[-1.8ex] 
 		& \multicolumn{1}{c}{\textit{Dependent variable:}} \\ 
 		\cline{2-2} 
-		\\[-1.8ex] & q1\_residuals \\ 
+		\\[-1.8ex] & Question 1 residuals \\ 
 		\hline \\[-1.8ex] 
-		q2\_residuals & 0.257$^{***}$ \\ 
+		Question 2 residuals & 0.257$^{***}$ \\ 
 		& (0.012) \\ 
 		& \\ 
 		Constant & $-$0.000 \\ 
@@ -353,7 +355,7 @@
 \vspace{0.5cm}
 \noindent In order to input the needed data for the creation of a scatterplot a dataframe is created with Q1 and Q2 residuals vectors. Afterwards the fitted line is added.
 
-\lstinputlisting[language=R, firstline=126, lastline=134]{PS03_Tomatis.R} 
+\lstinputlisting[language=R, firstline=134, lastline=142]{PS03_Tomatis.R} 
 \begin{figure}[H]\centering
 	\caption{\footnotesize Scatterplot of Q1 residuals against Q2 residuals, with fitted regression line}
 	\label{fig:q4_scatter}
@@ -361,7 +363,7 @@
 \end{figure}
 
 \vspace{1cm}
-\noindent\textbf{Answer 3.3}\\
+\noindent\textbf{Answer 4.3}\\
 
 \vspace{0.5cm}
 \noindent Here follows the prediction equation for Q1 residuals given Q2 residual values.
@@ -374,12 +376,64 @@
 \section*{Question 5}
 \noindent What if the incumbent's vote share is affected by both the president's popularity and the difference in spending between incumbent and challenger? 
 	\begin{enumerate}
-		\item Run a regression where the outcome variable is the incumbent's \texttt{voteshare} and the explanatory variables are \texttt{difflog} and \texttt{presvote}.	\vspace{5cm}
-		\item Write the prediction equation.	\vspace{5cm}
+		\item Run a regression where the outcome variable is the incumbent's \texttt{voteshare} and the explanatory variables are \texttt{difflog} and \texttt{presvote}.	\vspace{0.5cm}
+		\item Write the prediction equation.	
+		\vspace{0.5cm}
 		\item What is it in this output that is identical to the output in Question 4? Why do you think this is the case?
 	\end{enumerate}
 
+\vspace{2.5cm}
 
+\noindent\textbf{Answer 5.1}\\
 
+\vspace{0.5cm}
+\noindent Differently from before, a multivariate linear regression is now run. The dependent variable is \texttt{voteshare}, while both \texttt{presvote} and \texttt{difflog} are used as explanatory variables. This fifth regression allows for controlling differences in spending between the incumbent’s and challenger’s parties when estimating the effect of the presidential candidate’s vote share on the overall incumbent party’s vote share, and vice versa. In simpler terms, the coefficients obtained from this regression can be interpreted as the effect of each explanatory variable on the dependent variable, holding the other independent variable constant.
+\lstinputlisting[language=R, firstline=152, lastline=152]{PS03_Tomatis.R}  
+\begin{table}[H] \centering 
+	\caption{Multivariate regression model} 
+	\label{} 
+	\begin{tabular}{@{\extracolsep{5pt}}lc} 
+		\\[-1.8ex]\hline 
+		\hline \\[-1.8ex] 
+		& \multicolumn{1}{c}{\textit{Dependent variable:}} \\ 
+		\cline{2-2} 
+		\\[-1.8ex] & Incumbent's party overall vote share \\ 
+		\hline \\[-1.8ex] 
+		Presidential candidate's vote share & 0.257$^{***}$ \\ 
+		& (0.012) \\ 
+		& \\ 
+		Difference in campaign spending & 0.036$^{***}$ \\ 
+		& (0.001) \\ 
+		& \\ 
+		Constant & 0.449$^{***}$ \\ 
+		& (0.006) \\ 
+		& \\ 
+		\hline \\[-1.8ex] 
+		Observations & 3,193 \\ 
+		R$^{2}$ & 0.450 \\ 
+		Adjusted R$^{2}$ & 0.449 \\ 
+		Residual Std. Error & 0.073 (df = 3190) \\ 
+		F Statistic & 1,302.947$^{***}$ (df = 2; 3190) \\ 
+		\hline 
+		\hline \\[-1.8ex] 
+		\textit{Note:}  & \multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+	\end{tabular} 
+\end{table} 
+
+\vspace{1cm}
+\noindent\textbf{Answer 5.2}\\
+
+\vspace{0.5cm}
+\noindent The prediction equation of the multivariate regression estimated above is the following: 
+\[
+\widehat{\text{voteshare}}_i = \hat{\beta}_0 + \hat{\beta}_1 \, \text{presvote}_i + \hat{\beta}_2 \, \text{difflog}_i
+\]
+
+\vspace{1cm}
+\noindent\textbf{Answer 5.3}\\
+
+\vspace{0.5cm}
+\noindent The $\hat{\beta}_1$ coefficients are identical in the bivariate residuals regression estimated in Question 4 and in the multivariate regression run in Question 5. This occurs because the residuals obtained in Questions 1 and 2 represent the remaining variation in \texttt{voteshare} and \texttt{presvote} after controlling for \texttt{difflog}. Regressing one set of residuals on the other therefore captures the extent to which the unexplained variation in one variable is associated with that in the other. This is the same underlying mechanism as in a multivariate regression, where each explanatory variable’s coefficient is estimated while holding the others constant, thereby controlling for their effects.
+\noindent The $\hat{\beta}_1 = 0.257$ coefficient is interpretable as the expected average change in incumbent's party overall vote  hare given a unital change in incumbent's party presidential candidate's vote share, keeping the difference in spending between parties constant. 
 
 \end{document}

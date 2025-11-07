@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.26)  4 NOV 2025 12:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.26)  7 NOV 2025 11:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -870,6 +870,9 @@ LaTeX Warning: Label `' multiply defined.
 
 LaTeX Warning: Label `' multiply defined.
 
+
+LaTeX Warning: Label `' multiply defined.
+
 )
 \openout1 = `PS03_Tomatis.aux'.
 
@@ -1033,28 +1036,43 @@ Underfull \hbox (badness 10000) in paragraph at lines 299--300
 
  []
 
-[9 <./q3_scatter.pdf>] [10]
-Underfull \hbox (badness 10000) in paragraph at lines 317--318
+[9 <./q3_scatter.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 319--320
+
+ []
+
+(PS03_Tomatis.R) [10]
+Underfull \hbox (badness 10000) in paragraph at lines 353--354
 
  []
 
 (PS03_Tomatis.R)
-Underfull \hbox (badness 10000) in paragraph at lines 351--352
-
- []
-
-[11] (PS03_Tomatis.R)
-<q4_scatter.pdf, id=151, 505.89pt x 505.89pt>
+<q4_scatter.pdf, id=146, 505.89pt x 505.89pt>
 File: q4_scatter.pdf Graphic file (type pdf)
 <use q4_scatter.pdf>
-Package pdftex.def Info: q4_scatter.pdf  used on input line 360.
+Package pdftex.def Info: q4_scatter.pdf  used on input line 362.
 (pdftex.def)             Requested size: 469.75502pt x 469.76265pt.
- [12]
-Underfull \hbox (badness 10000) in paragraph at lines 364--365
+ [11]
+Underfull \hbox (badness 10000) in paragraph at lines 366--367
 
  []
 
-[13 <./q4_scatter.pdf>] [14] (PS03_Tomatis.aux)
+[12 <./q4_scatter.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 387--388
+
+ []
+
+(PS03_Tomatis.R) [13]
+Underfull \hbox (badness 10000) in paragraph at lines 424--425
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 433--434
+
+ []
+
+[14] [15] (PS03_Tomatis.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
@@ -1067,10 +1085,10 @@ Package rerunfilecheck Info: File `PS03_Tomatis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 27328 strings out of 474486
- 480942 string characters out of 5743755
- 2017542 words of memory out of 5000000
- 49037 multiletter control sequences out of 15000+600000
+ 27336 strings out of 474486
+ 481107 string characters out of 5743755
+ 2022542 words of memory out of 5000000
+ 49038 multiletter control sequences out of 15000+600000
  569162 words of font info for 82 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,10n,93p,3246b,2131s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1092,9 +1110,9 @@ ic/amsfonts/cm/cmsy8.pfb><C:/Users/matil/AppData/Local/Programs/MiKTeX/fonts/ty
 pe1/public/amsfonts/cm/cmti12.pfb><C:/Users/matil/AppData/Local/Programs/MiKTeX
 /fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Users/matil/AppData/Local/Progra
 ms/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on PS03_Tomatis.pdf (14 pages, 944784 bytes).
+Output written on PS03_Tomatis.pdf (15 pages, 948764 bytes).
 PDF statistics:
- 275 PDF objects out of 1000 (max. 8388607)
- 79 named destinations out of 1000 (max. 500000)
+ 283 PDF objects out of 1000 (max. 8388607)
+ 84 named destinations out of 1000 (max. 500000)
  33 words of extra memory for PDF output out of 10000 (max. 10000000)
 

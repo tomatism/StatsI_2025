@@ -41,7 +41,9 @@ question_1 <- lm(voteshare ~ difflog, data = inc.sub)
 summary(question_1)
 stargazer(question_1,
           type = "latex",
-          title = "Bivariate regression model, voteshare ~ difflog")
+          title = "First bivariate regression model",
+          covariate.labels = "Difference in campaign respending",
+          dep.var.labels = "Incumbent's party overall vote share")
 
 # 1.2 #
 windows()
@@ -69,7 +71,9 @@ question_2 <- lm(presvote ~ difflog, data = inc.sub)
 summary(question_2)
 stargazer(question_2,
           type = "latex",
-          title = "Second bivariate regression model")
+          title = "Second bivariate regression model",
+          covariate.labels = "Difference in campaign respending",
+          dep.var.labels = "Presidential candidate's vote share")
 
 # 2.2 #
 windows()
@@ -96,7 +100,9 @@ question_3 <- lm(voteshare ~ presvote, data = inc.sub)
 summary(question_3)
 stargazer(question_3,
           type = "latex",
-          title = "Third bivariate regression model")
+          title = "Third bivariate regression model",
+          covariate.labels = "Presidential candidate's vote share",
+          dep.var.labels = "Incumbent's party overall vote share")
 
 # 3.2 #
 windows()
@@ -119,7 +125,9 @@ question_4 <- lm(q1_residuals ~ q2_residuals)
 summary(question_4)
 stargazer(question_4,
           type = "latex",
-          title = "Regressing Q1 residuals on Q2 residuals")
+          title = "Regressing Q1 residuals on Q2 residuals",
+          covariate.labels = "Question 2 residuals",
+          dep.var.labels = "Question 1 residuals")
 
 # 4.2 #
 windows()
@@ -138,3 +146,14 @@ pdf("q4_scatter.pdf")
 print(q4_scatter)
 dev.off()
 
+
+## QUESTION 5 ##
+
+question_5 <- lm(voteshare ~ presvote + difflog, data = inc.sub)
+summary(question_5)
+stargazer(question_3,
+          type = "latex",
+          title = "Multivariate regression model",
+          covariate.labels = c("Presidential candidate's vote share", 
+                               "Difference in campaign spending"),
+          dep.var.labels = "Incumbent's party overall vote share")
