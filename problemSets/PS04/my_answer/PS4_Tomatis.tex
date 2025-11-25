@@ -1,0 +1,350 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage{graphicx,textcomp}
+\usepackage{natbib}
+\usepackage{setspace}
+\usepackage{fullpage}
+\usepackage{color}
+\usepackage[reqno]{amsmath}
+\usepackage{amsthm}
+\usepackage{fancyvrb}
+\usepackage{amssymb,enumerate}
+\usepackage[all]{xy}
+\usepackage{endnotes}
+\usepackage{lscape}
+\newtheorem{com}{Comment}
+\usepackage{float}
+\usepackage{hyperref}
+\newtheorem{lem} {Lemma}
+\newtheorem{prop}{Proposition}
+\newtheorem{thm}{Theorem}
+\newtheorem{defn}{Definition}
+\newtheorem{cor}{Corollary}
+\newtheorem{obs}{Observation}
+\usepackage[compact]{titlesec}
+\usepackage{dcolumn}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usepackage{multirow}
+\usepackage{xcolor}
+\newcolumntype{.}{D{.}{.}{-1}}
+\newcolumntype{d}[1]{D{.}{.}{#1}}
+\definecolor{light-gray}{gray}{0.65}
+\usepackage{url}
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+\lstset{style=mystyle}
+\newcommand{\Sref}[1]{Section~\ref{#1}}
+\newtheorem{hyp}{Hypothesis}
+
+
+\title{Problem Set 3 \\
+	\large Applied Stats/Quant Methods }
+\date{Due: November 27, 2025}
+\author{Matilda Tomatis}
+
+
+\begin{document}
+	\maketitle
+	\section*{Instructions}
+	\begin{itemize}
+		\item Please show your work! You may lose points by simply writing in the answer. If the problem requires you to execute commands in \texttt{R}, please include the code you used to get your answers. Please also include the \texttt{.R} file that contains your code. If you are not sure if work needs to be shown for a particular problem, please ask.
+		\item Your homework should be submitted electronically on GitHub.
+		\item This problem set is due before 23:59 on Thursday November 27, 2025. No late assignments will be accepted.
+	\end{itemize}
+
+
+
+	\vspace{.5cm}
+\section*{Question 1: Economics}
+\vspace{.25cm}
+\noindent 	
+In this question, use the \texttt{prestige} dataset in the \texttt{car} library. First, run the following commands:
+
+\begin{verbatim}
+install.packages(car)
+library(car)
+data(Prestige)
+help(Prestige)
+\end{verbatim} 
+
+
+\noindent We would like to study whether individuals with higher levels of income have more prestigious jobs. Moreover, we would like to study whether professionals have more prestigious jobs than blue and white collar workers.
+
+\newpage
+\begin{enumerate}
+	
+	\item [(a)]
+	Create a new variable \texttt{professional} by recoding the variable \texttt{type} so that professionals are coded as $1$, and blue and white collar workers are coded as $0$ (Hint: \texttt{ifelse}).
+	
+	\vspace{1.5cm}
+	
+	
+	\item [(b)]
+	Run a linear model with \texttt{prestige} as an outcome and \texttt{income}, \texttt{professional}, and the interaction of the two as predictors (Note: this is a continuous $\times$ dummy interaction.)
+	
+	\vspace{1.5cm}
+	\item [(c)]
+	Write the prediction equation based on the result.
+	
+	\vspace{1.5cm}
+	\item [(d)]
+	Interpret the coefficient for \texttt{income}.
+	
+	\vspace{1.5cm}	
+	\item [(e)]
+	Interpret the coefficient for \texttt{professional}.
+	
+	\vspace{1.5cm}	\vspace{1.5cm}
+	\item [(f)]
+	What is the effect of a \$1,000 increase in income on prestige score for professional occupations? In other words, we are interested in the marginal effect of income when the variable \texttt{professional} takes the value of $1$. Calculate the change in $\hat{y}$ associated with a \$1,000 increase in income based on your answer for (c).
+	
+	\vspace{1.5cm}
+	
+	
+	\item [(g)]
+	What is the effect of changing one's occupations from non-professional to professional when her income is \$6,000? We are interested in the marginal effect of professional jobs when the variable \texttt{income} takes the value of $6,000$. Calculate the change in $\hat{y}$ based on your answer for (c).
+	
+	
+\end{enumerate}
+
+\vspace{2cm}
+\noindent\textbf{Answer (a)}\\
+\vspace{0.5cm}
+\noindent Originally the observations in the varible \texttt{type} were coded as professionals, white collar or blue collar. In order to only make a distinction between professioanls and non-professional the ifelse fucntion is used: \texttt{prof} are coded as 1, everything else as 0. 
+\lstinputlisting[language=R, firstline=42, lastline=42]{PS04_Tomatis.R} 
+
+\vspace{1cm}
+\noindent\textbf{Answer (b)}\\
+
+\vspace{0.5cm}
+Here follows the code for the multivariate regression having as independent variables \texttt{income}, \texttt{professional} and their interraction term. Afterwards the results of the estimation are presented. 
+\lstinputlisting[language=R, firstline=46, lastline=46]{PS04_Tomatis.R} 
+
+\vspace{0.5cm}
+\begin{table}[!htbp] \centering 
+	\caption{Economics multivariate regression} 
+	\label{} 
+	\begin{tabular}{@{\extracolsep{5pt}}lc} 
+		\\[-1.8ex]\hline 
+		\hline \\[-1.8ex] 
+		& \multicolumn{1}{c}{\textit{Dependent variable:}} \\ 
+		\cline{2-2} 
+		\\[-1.8ex] & Prestige of one's occupation \\ 
+		\hline \\[-1.8ex] 
+		Income level & 0.003$^{***}$ \\ 
+		& (0.0005) \\ 
+		& \\ 
+		Professional occupation & 37.781$^{***}$ \\ 
+		& (4.248) \\ 
+		& \\ 
+		income:professional & $-$0.002$^{***}$ \\ 
+		& (0.001) \\ 
+		& \\ 
+		Constant & 21.142$^{***}$ \\ 
+		& (2.804) \\ 
+		& \\ 
+		\hline \\[-1.8ex] 
+		Observations & 98 \\ 
+		R$^{2}$ & 0.787 \\ 
+		Adjusted R$^{2}$ & 0.780 \\ 
+		Residual Std. Error & 8.012 (df = 94) \\ 
+		F Statistic & 115.878$^{***}$ (df = 3; 94) \\ 
+		\hline 
+		\hline \\[-1.8ex] 
+		\textit{Note:}  & \multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+	\end{tabular} 
+\end{table} 
+
+\vspace{0.5cm}
+\noindent\textbf{Answer (c)}\\
+
+\vspace{0.5cm}
+\noindent The prediction equation considers the above estimated coefficient to predict unknown \texttt{prestige} values.
+\[
+\widehat{\text{prestige}}_i = 21.1422 + 0.0032 * {\text{income}}_i + 37.7813 * \text{professional}_i + 0.0023 * {\text{income}}_i * \text{professional}_i
+\]
+
+\vspace{0.5cm}
+\noindent\textbf{Answer (d)}\\
+
+\vspace{0.5cm}
+\noindent In this interaction term, the coefficient for \texttt{income} represents the average increase in prestige for a non-professional when considering a one-unit increase in income. Given that this is an interaction model, the specification regarding professional categorization is necessary: when one's job is non-professional, the variable takes the value 0. The estimated coefficient $\hat{\beta}_1 = 0.0032$ implies that, for each one-unit increase in income, a non-professional will observe a 0.0032 point increase in occupational prestige.
+
+\noindent When an individual is a professional the effect of a unital increase in income takes the values of $\hat{\beta}_1$ + $\hat{\beta}_3$.
+
+\vspace{0.5cm}
+\noindent\textbf{Answer (e)}\\
+
+\vspace{0.5cm}
+\noindent The interpretation of the \texttt{professional} coefficient is bit more abstract:it represents the average difference in prestige between a professional and a non-professional (white- or blue-collar) job when income is equal to 0. This scenario is hardly realistic, since anyone who holds a job (whether professional or not) would typically receive some income.
+
+\noindent Nonetheless, the baseline average difference between the two categories is 37.7813 prestige points. When income is taken into account, the difference in average prestige between the two groups is obtained by adding the coefficient $\hat{\beta}_2$ to the product of $\hat{\beta}_3$ and the income level.
+
+\noindent When an individual is a professional the effect of a unital increase in income takes the values of $\hat{\beta}_1$ + $\hat{\beta}_3$.
+
+\vspace{0.5cm}
+\noindent\textbf{Answer (f)}\\
+
+\vspace{0.5cm}
+\noindent The effect associated with a $\$1,000$ increase in income for professional can be calculated by summing the $\hat{\beta}_1$ and the $\hat{\beta}_3$ coefficients and multiplying the sum by 1000. 
+\lstinputlisting[language=R, firstline=67, lastline=69]{PS04_Tomatis.R} 
+\begin{verbatim}
+	> as.numeric(sum_coef)*1000
+	[1] 0.8452
+\end{verbatim}
+\noindent A $\$1,000$ increase in income increases the prestige of professionals by 0.8452 points. 
+ 
+\vspace{0.5cm}
+\noindent The claim is tested in R and shown in the following section.
+\lstinputlisting[language=R, firstline=58, lastline=76]{PS04_Tomatis.R} 
+\begin{verbatim}
+> print(test)
+[1] TRUE
+\end{verbatim}
+
+\vspace{0.5cm}
+\noindent\textbf{Answer (g)}\\
+
+\vspace{0.5cm}
+\noindent The effect on prestige related to a change in occupation (from non-professional to professional), considering an income of $\$6,000$, can be computed by summing $\hat{\beta}_2$ and the product of $\hat{\beta}_3$ and 6,000.  
+\lstinputlisting[language=R, firstline=88, lastline=90]{PS04_Tomatis.R} 
+\begin{verbatim}
+	> as.numeric(sum_coef_2)
+	[1] 23.82703
+\end{verbatim}
+\noindent At an income level of $\$6,000$, the change to a professional job from a non-professional one is associated with an increase of 23.82703 prestige points. 
+
+\vspace{0.5cm}
+\noindent Once again, following similar procedures, the claim is tested in R and reported here.
+\lstinputlisting[language=R, firstline=81, lastline=95]{PS04_Tomatis.R} 
+\begin{verbatim}
+	> print(test)
+	[1] TRUE
+\end{verbatim}
+
+
+\newpage
+
+\section*{Question 2: Political Science}
+\vspace{.25cm}
+\noindent 	Researchers are interested in learning the effect of all of those yard signs on voting preferences.\footnote{Donald P. Green, Jonathan	S. Krasno, Alexander Coppock, Benjamin D. Farrer,	Brandon Lenoir, Joshua N. Zingher. 2016. ``The effects of lawn signs on vote outcomes: Results from four randomized field experiments.'' Electoral Studies 41: 143-150. } Working with a campaign in Fairfax County, Virginia, 131 precincts were randomly divided into a treatment and control group. In 30 precincts, signs were posted around the precinct that read, ``For Sale: Terry McAuliffe. Don't Sellout Virgina on November 5.'' \\
+
+Below is the result of a regression with two variables and a constant.  The dependent variable is the proportion of the vote that went to McAuliff's opponent Ken Cuccinelli. The first variable indicates whether a precinct was randomly assigned to have the sign against McAuliffe posted. The second variable indicates
+a precinct that was adjacent to a precinct in the treatment group (since people in those precincts might be exposed to the signs).  \\
+
+\vspace{.5cm}
+\begin{table}[!htbp]
+	\centering 
+	\textbf{Impact of lawn signs on vote share}\\
+	\begin{tabular}{@{\extracolsep{5pt}}lccc} 
+		\\[-1.8ex] 
+		\hline \\[-1.8ex]
+		Precinct assigned lawn signs  (n=30)  & 0.042\\
+		& (0.016) \\
+		Precinct adjacent to lawn signs (n=76) & 0.042 \\
+		&  (0.013) \\
+		Constant  & 0.302\\
+		& (0.011)
+		\\
+		\hline \\
+	\end{tabular}\\
+	\footnotesize{\textit{Notes:} $R^2$=0.094, N=131}
+\end{table}
+
+\vspace{.5cm}
+\begin{enumerate}
+	\item [(a)] Use the results from a linear regression to determine whether having these yard signs in a precinct affects vote share (e.g., conduct a hypothesis test with $\alpha = .05$).
+	
+	\vspace{1.5cm}
+	\item [(b)]  Use the results to determine whether being
+	next to precincts with these yard signs affects vote
+	share (e.g., conduct a hypothesis test with $\alpha = .05$).
+	
+	\vspace{1.5cm}
+	\item [(c)] Interpret the coefficient for the constant term substantively.
+	\vspace{1.5cm}
+	
+	\item [(d)] Evaluate the model fit for this regression.  What does this	tell us about the importance of yard signs versus other factors that are not modeled?
+	
+\end{enumerate}  
+
+\vspace{2cm}
+\noindent\textbf{Answer (a)}\\
+\vspace{0.5cm}
+
+\noindent In verifying wheter having the yard signs in a precint effects vote share we conduct an hypothesis test on the related $\hat{\beta}$. In our analysis:
+\begin{enumerate}
+	\item Ho states: $\hat{\beta}_{\text{precinct\_yards}}$ = 0, the effect on Cuccinelli's vote share of having the signs is equal to 0.\\
+	\item Ha states: $\hat{\beta}_{\text{precinct\_yards}} \ne 0$, the yard signs have a significant effect on vote share.\\ 
+\end{enumerate}
+\noindent To test this hypothesis, we compute the t-statistic associated with the estimated $\hat{\beta}_{\text{precinct\_yards}}$ coefficient. This is obtained by subtracting the null value (0) from the estimate and dividing the result by its standard error. Afterwards, we compute the associated p-value using a Student-t's distribution with n-k-1 degrees of freedom. 
+
+\lstinputlisting[language=R, firstline=101, lastline=106]{PS04_Tomatis.R} 
+\begin{verbatim}
+> print(result)
+[1] "p-value: 0.00972001974200814 - Ho is rejected"
+\end{verbatim}
+
+\noindent It's found that having yard signs has a statistically significant effect on the vote share of the candidate Cuccinelli. This effect is statistically significant at the 95\% confidence level.
+
+\vspace{0.5cm}
+\noindent\textbf{Answer (b)}\\
+\vspace{0.5cm}
+
+\noindent Similar procedures as the ones conducted above will be carried out to veirify wheter the effect of being next to precints with assigned yeard signs on vote shares is significant. 
+
+\noindent The hyphothesis tested is the following:
+\begin{enumerate}
+	\item Ho states: $\hat{\beta}_{\text{adjacent\_yards}}$ = 0, meaning that the effect on Cuccinelli’s vote share of a precinct being adjacent to one assigned to have yard signs is zero.\\
+	\item Ha states: $\hat{\beta}_{\text{precinct\_yards}} \ne 0$, the closeness to a precint having yard signs have a significant effect on vote share.\\ 
+\end{enumerate}
+
+\noindent As anticipated, the procedures to test the hyphothesis is the same as above. 
+
+\lstinputlisting[language=R, firstline=111, lastline=116]{PS04_Tomatis.R} 
+\begin{verbatim}
+> print(result_b)
+[1] "p-value: 0.001569 - Ho is rejected"
+\end{verbatim}
+
+\noindent The results show that having an adjacent precint with yard signs against McAuliffe has, on average, a positive effect of Cuccinelli's vote share. The results hold at a 5\% significant level.
+
+
+\vspace{0.5cm}
+\noindent\textbf{Answer (c)}\\
+\vspace{0.5cm}
+
+\noindent The constant term is interpretable as the value of y when both X1 and X2 are equal to 0. In the case under examination $\hat{beta}_0 = 0.302$ would be Cuccinelli's vote share when the precint doesn't have yard signs against McAuliffe nor it is adjacent to a precint having them. In this scenario Cuccinelli's vote shore would be equal to 30.2%. 
+
+\vspace{0.5cm}
+\noindent\textbf{Answer (d)}\\
+\vspace{0.5cm}
+
+\noindent While the estimated coefficients are statistically significant, the model using only these predictors explains little of the variance in vote share. The $R^2$ being equal to 0.094 implies only 9.4\% of the variance observed in Cuccinelli's vote share is explained by the present of lawn signs. 
+
+\noindent Moreover, this value suggests that other factors not included in the model should be more deeply investigated and potentially incorporated.  
+\end{document}
