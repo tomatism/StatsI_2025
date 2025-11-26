@@ -185,7 +185,7 @@ Here follows the code for the multivariate regression having as independent vari
 \vspace{0.5cm}
 \noindent The prediction equation considers the above estimated coefficient to predict unknown \texttt{prestige} values.
 \[
-\widehat{\text{prestige}}_i = 21.1422 + 0.0032 * {\text{income}}_i + 37.7813 * \text{professional}_i + 0.0023 * {\text{income}}_i * \text{professional}_i
+\widehat{\text{prestige}}_i = 21.1422 + 0.0032 * {\text{income}}_i + 37.7813 * \text{professional}_i - 0.0023 * {\text{income}}_i * \text{professional}_i
 \]
 
 \vspace{0.5cm}
@@ -298,10 +298,10 @@ a precinct that was adjacent to a precinct in the treatment group (since people 
 
 \noindent In verifying wheter having the yard signs in a precint effects vote share we conduct an hypothesis test on the related $\hat{\beta}$. In our analysis:
 \begin{enumerate}
-	\item Ho states: $\hat{\beta}_{\text{precinct\_yards}}$ = 0, the effect on Cuccinelli's vote share of having the signs is equal to 0.\\
-	\item Ha states: $\hat{\beta}_{\text{precinct\_yards}} \ne 0$, the yard signs have a significant effect on vote share.\\ 
+	\item Ho states: $\hat{\beta}_{\text{treatment}}$ = 0, the effect on Cuccinelli's vote share of having the signs is equal to 0.\\
+	\item Ha states: $\hat{\beta}_{\text{treatment}} \ne 0$, the yard signs have a significant effect on vote share.\\ 
 \end{enumerate}
-\noindent To test this hypothesis, we compute the t-statistic associated with the estimated $\hat{\beta}_{\text{precinct\_yards}}$ coefficient. This is obtained by subtracting the null value (0) from the estimate and dividing the result by its standard error. Afterwards, we compute the associated p-value using a Student-t's distribution with n-k-1 degrees of freedom. 
+\noindent To test this hypothesis, we compute the t-statistic associated with the estimated $\hat{\beta}_{\text{treatment}}$ coefficient. This is obtained by subtracting the null value (0) from the estimate and dividing the result by its standard error. Afterwards, we compute the associated p-value using a Student-t's distribution with n-k-1 degrees of freedom. 
 
 \lstinputlisting[language=R, firstline=101, lastline=106]{PS04_Tomatis.R} 
 \begin{verbatim}
@@ -319,8 +319,8 @@ a precinct that was adjacent to a precinct in the treatment group (since people 
 
 \noindent The hyphothesis tested is the following:
 \begin{enumerate}
-	\item Ho states: $\hat{\beta}_{\text{adjacent\_yards}}$ = 0, meaning that the effect on Cuccinelli’s vote share of a precinct being adjacent to one assigned to have yard signs is zero.\\
-	\item Ha states: $\hat{\beta}_{\text{precinct\_yards}} \ne 0$, the closeness to a precint having yard signs have a significant effect on vote share.\\ 
+	\item Ho states: $\hat{\beta}_{\text{adjacent\_treat}}$ = 0, meaning that the effect on Cuccinelli’s vote share of a precinct being adjacent to one assigned to have yard signs is zero.\\
+	\item Ha states: $\hat{\beta}_{\text{adjacent\_treat}} \ne 0$, the closeness to a precint having yard signs have a significant effect on vote share.\\ 
 \end{enumerate}
 
 \noindent As anticipated, the procedures to test the hyphothesis is the same as above. 
@@ -338,13 +338,13 @@ a precinct that was adjacent to a precinct in the treatment group (since people 
 \noindent\textbf{Answer (c)}\\
 \vspace{0.5cm}
 
-\noindent The constant term is interpretable as the value of y when both X1 and X2 are equal to 0. In the case under examination $\hat{beta}_0 = 0.302$ would be Cuccinelli's vote share when the precint doesn't have yard signs against McAuliffe nor it is adjacent to a precint having them. In this scenario Cuccinelli's vote shore would be equal to 30.2%. 
+\noindent The constant term is interpretable as the value of y when both X1 and X2 are equal to 0. In the case under examination $\hat{beta}_0 = 0.302$ would be Cuccinelli's vote share when the precint doesn't have yard signs against McAuliffe nor it is adjacent to a precint having them. In this scenario Cuccinelli's vote shore would be equal to 30.2\%. 
 
 \vspace{0.5cm}
 \noindent\textbf{Answer (d)}\\
 \vspace{0.5cm}
 
-\noindent While the estimated coefficients are statistically significant, the model using only these predictors explains little of the variance in vote share. The $R^2$ being equal to 0.094 implies only 9.4\% of the variance observed in Cuccinelli's vote share is explained by the present of lawn signs. 
+\noindent While the estimated coefficients are statistically significant, the model using only these predictors explains little of the variance in vote share. The $R^2$ being equal to 0.094 implies only 9.4\% of the variance observed in Cuccinelli's vote share is explained by the present of lawn signs.
 
-\noindent Moreover, this value suggests that other factors not included in the model should be more deeply investigated and potentially incorporated.  
+\noindent Moreover, this value suggests that other factors not included in the model should be more deeply investigated and potentially incorporated. Some examples of those other explanatory variables might be party ID, sex, age and income levels.  
 \end{document}
