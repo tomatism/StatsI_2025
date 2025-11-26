@@ -337,28 +337,6 @@ plot.interflex(interflex_eurosc_binning,
                Ylabel = "Marginal Effect of Education (years)",
                cex.main = 1)
 
-# Use interflex with interaction: imwbcnt (attitude toward immigrants from Western countries) * gndr (gender)
-# Prepare relevant data, dropping NAs
-df_if_imwbcnt_gndr <- na.omit(df[, c("euftf_re", "imwbcnt", "gndr")])
-# Fit interflex model: D = imwbcnt (treatment), X = gndr (moderator, assuming coded as factor: e.g., 1=Male, 2=Female)
-interflex_imwbcnt_gndr <- interflex(
-  estimator = "linear",
-  Y = "euftf_re",
-  D = "imwbcnt",
-  X = "gndr",
-  data = df_if_imwbcnt_gndr
-)
-
-# Visualize marginal effects of imwbcnt for each gender
-plot.interflex(
-  interflex_imwbcnt_gndr,
-  main = "Marginal Effect of Attitude Toward Western Immigrants\non Euroscepticism by Gender",
-  Xlabel = "Gender", 
-  Ylabel = "Marginal Effect of imwbcnt",
-  cex.main = 1
-)
-
-
 
 
 
