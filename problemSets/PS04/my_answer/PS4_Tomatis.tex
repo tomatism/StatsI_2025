@@ -344,7 +344,18 @@ a precinct that was adjacent to a precinct in the treatment group (since people 
 \noindent\textbf{Answer (d)}\\
 \vspace{0.5cm}
 
+\noindent \noindent To test wheter the the estimated coefficients effect vote share we can conduct an F-test.The procedure would help verify wheter both the coefficients related to the presence of lawn signs are equal to 0, it does so by considering wheter the $R^2$ value of the full model is significantly higher than that of the sole constant. 
+
+\lstinputlisting[language=R, firstline=121, lastline=125]{PS04_Tomatis.R} 
+\begin{verbatim}
+> print(p_value_F)
+[1] 0.001803868
+\end{verbatim}
+
+\noindent The results are in line with the individual t-test conducted above. A p-value equal too 0.0018 makes us reject the null hyphothesis of both $\hat{\beta}_{\text{treatment}}$ and $\hat{\beta}_{\text{adjacent\_treat}}$ are equal to. 
+
 \noindent While the estimated coefficients are statistically significant, the model using only these predictors explains little of the variance in vote share. The $R^2$ being equal to 0.094 implies only 9.4\% of the variance observed in Cuccinelli's vote share is explained by the present of lawn signs.
 
 \noindent Moreover, this value suggests that other factors not included in the model should be more deeply investigated and potentially incorporated. Some examples of those other explanatory variables might be party ID, sex, age and income levels.  
+
 \end{document}

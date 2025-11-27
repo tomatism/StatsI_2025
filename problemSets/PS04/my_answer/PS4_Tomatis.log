@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.26)  26 NOV 2025 11:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.26)  27 NOV 2025 18:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1016,7 +1016,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 323--324
 
  []
 
-[8] (PS04_Tomatis.R) [9] (PS4_Tomatis.aux)
+[8] (PS04_Tomatis.R) (PS04_Tomatis.R) [9] [10] (PS4_Tomatis.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
@@ -1025,10 +1025,10 @@ Package rerunfilecheck Info: File `PS4_Tomatis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 27298 strings out of 474486
- 480258 string characters out of 5743755
+ 27311 strings out of 474486
+ 480475 string characters out of 5743755
  2096542 words of memory out of 5000000
- 49008 multiletter control sequences out of 15000+600000
+ 49012 multiletter control sequences out of 15000+600000
  570153 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,10n,93p,3245b,2131s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1052,9 +1052,9 @@ onts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/matil/AppData/Local/Programs
 /MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/matil/AppData/Local
 /Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Users/matil/AppD
 ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on PS4_Tomatis.pdf (9 pages, 224247 bytes).
+Output written on PS4_Tomatis.pdf (10 pages, 227361 bytes).
 PDF statistics:
- 226 PDF objects out of 1000 (max. 8388607)
- 78 named destinations out of 1000 (max. 500000)
+ 238 PDF objects out of 1000 (max. 8388607)
+ 85 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -99,7 +99,7 @@ print(test)
 
 # a
 t_stat   <- 0.042 / 0.016
-df       <- 131 - 2 - 1   # 128
+df       <- (131 - 2 - 1)   # 128
 p_value  <- 2 * pt(abs(t_stat), df = df, lower.tail = FALSE)
 alpha    <- 0.05
 result   <- ifelse(p_value > alpha,
@@ -109,9 +109,17 @@ print(result)
 
 # b
 t_stat_b  <- 0.042 / 0.013
-df       <- 131 - 2 - 1 
+df       <- (131 - 2 - 1)
 p_value_b <- 2 * pt(abs(t_stat_b), df = df, lower.tail = FALSE)
 result_b  <- ifelse(p_value_b > alpha,
                     paste("p-value:", signif(p_value_b, 4), "- Ho cannot be rejected"),
                     paste("p-value:", signif(p_value_b, 4), "- Ho is rejected"))
 print(result_b)
+
+# d
+
+# df_2 are the added variable in the full model when compared to the base model 
+  # (i.e. the model with just the constant)
+df_2 <- 2
+f_value <- (0.094 / df_2) / ((1-0.094)/(df))
+p_value_F <- pf(f_value, df1 = df_2, df2 = df, lower.tail = FALSE)
